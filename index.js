@@ -4,25 +4,16 @@ const app = express();
 //Apontando para a instância do express que a view engine que será utilizada é o EJS;
 app.set('view engine', 'ejs');
 
+//Setando no express o nome da pasta que irá conter os arquivos estáticos da aplicação
+app.use(express.static('public'));
 
-app.get("/:nome?/:lang?", function(req, res){
-    let nome = req.params.nome; //Pegando a informação que o usuário digitar na rota e salvando na variável nome;
-    let lang = req.params.lang;
 
-    if(!nome){ //Se nenhum nome for informado 
-        nome = "Não identificado";
-    }
-    if(!lang){ //Se nenhuma linguagem for informada
-        lang = "Não identificada";
-    }
-    res.render("index", { //Setando o arquivo index.ejs para ser renderizado quando o usuário acessar a rota principal;
-        nome : nome, //Enviando o valor de duas variáveis criadas para dentro do html;
-        lang : lang
-    }); 
+app.get("/", function(req, res){
+    res.render("index"); 
 });
 
-app.get("/principal", function(req, res){
-    res.render("principal/perfil");//Carregando arquivo ejs dentro da pasta principal
+app.get("/perguntar", function(req, res){
+    res.render("perguntas")
 });
 
 app.listen(8080, () =>{

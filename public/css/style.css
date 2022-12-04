@@ -1,0 +1,11 @@
+body{
+    background-color: #eceff1;
+}
+
+#formulario-pergunta{
+    margin-top: 5vh; /* Unidade de medida vh corresponde a porcentagem da tela*/
+}
+
+#imagem-topo{
+    margin-left: 2vh;
+}
