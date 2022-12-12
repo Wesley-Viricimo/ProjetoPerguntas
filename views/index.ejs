@@ -1,6 +1,32 @@
 <%-include('partials/header.ejs') %>
-<body>
-    <%-include('partials/navbar.ejs') %>
-    <h1>Estilo do bootstrap</h1>
-</body>
-<%-include('partials/footer.ejs') %>
+
+    <body>
+        <%-include('partials/navbar.ejs') %>
+
+            <div class="container">
+                <hr>
+                <h1> Perguntas</h1>
+                <hr>
+                <a href="/perguntar" class="btn btn-primary">Perguntar</a>
+                <hr>
+
+                <% perguntas.forEach(pergunta => { %>
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <h1>O usuário <%=pergunta.usuario%> perguntou: </h1>
+                            <br>
+                            <h3><%= pergunta.titulo %></h3>
+                        </div>
+
+                        <div class="card-footer">
+                            <p><%= pergunta.descricao %></p>
+                            <hr>
+                            <a href="/pergunta/<%= pergunta.id %>"><button class="btn btn-primary">Responder</button></a>
+                        </div>
+                    </div>
+                        
+                    <% }) %>
+            </div>
+    </body>
+    <%-include('partials/footer.ejs') %>
