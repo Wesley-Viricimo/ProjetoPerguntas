@@ -3,7 +3,7 @@ const connection = require('./database');
 
 const Resposta = connection.define('resposta' ,{
     resposta : {
-        type : Sequelize.TEXT,
+        type : Sequelize.TEXT, 
         allowNull: false
     },
     perguntaId: {
@@ -12,7 +12,7 @@ const Resposta = connection.define('resposta' ,{
     }
 });
 
-Resposta.sync({force : false}).then(() => {
+Resposta.sync({force : false}).then(() => { 
     console.log("Tabela resposta criada");
 });
 

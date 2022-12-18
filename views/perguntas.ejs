@@ -1,9 +1,9 @@
-<%-include('partials/header.ejs')%> <!--Importando partial referente ao cabeçalho-->
+<%-include('partials/header.ejs')%> 
 
 <body>
-    <%-include('partials/navbar.ejs') %> <!--Importando partial referente ao componente navbar-->
+    <%-include('partials/navbar.ejs') %>
     <div class="container">
-        <div class="card" id="formulario-pergunta"> <!--Recurso card é separada em 2 componentes: reader e body > Cabeçalho e Corpo-->
+        <div class="card" id="formulario-pergunta"> 
             <div class="card-header">
                 <h2>Realizar pergunta</h2>
             </div>
@@ -12,18 +12,18 @@
                 <form method="POST" action="/salvapergunta">
                     <label><b>Nome de Usuário/Email:</b></label>
                     <input type="email" placeholder="Usuário/email" class="form-control" name="usuario">
-                    <br><!--Quebra de linha-->
-                    <label><b>Título:</b></label>
-                    <input type="text" placeholder="Titulo" class="form-control" name="titulo"> <!--Placeholder é igual ao hint e Class form-control aplica a edição no componente utilizando bootstrap-->
-                    <br><!--Quebra de linha-->
-                    <label><b>Descrição:</b></label>
-                    <textarea placeholder="Descreva sua pergunta aqui!" class="form-control" name="descricao"></textarea> <!--Class form-control aplica a edição no componente utilizando bootstrap-->
                     <br>
-                    <button class="btn btn-primary">Perguntar</button> <!--Class btn-primary aplica a edição no componente utilizando bootstrap-->
+                    <label><b>Título:</b></label>
+                    <input type="text" placeholder="Titulo" class="form-control" name="titulo"> 
+                    <br>
+                    <label><b>Descrição:</b></label>
+                    <textarea placeholder="Descreva sua pergunta aqui!" class="form-control" name="descricao"></textarea> 
+                    <br>
+                    <button class="btn btn-primary">Perguntar</button>
                 </form>
             </div>
         </div>
     </div>
 </body>
 
-<%-include('partials/footer.ejs')%> <!--Importando partial referente ao rodapé-->
+<%-include('partials/footer.ejs')%>

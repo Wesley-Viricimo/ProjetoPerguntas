@@ -17,10 +17,8 @@ const Pergunta = connection.define('pergunta',{
     }
 });
 
-//Passando o model criado para o banco de dados e setando para não forçar a criação caso a tabela já exista.
 Pergunta.sync({force : false}).then(() => {
     console.log("Tabela criada!");
 });
 
-//Exportando o model pergunta
 module.exports = Pergunta;
